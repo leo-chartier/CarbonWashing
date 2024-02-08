@@ -25,6 +25,8 @@ jobs:
         working-directory: ../renpy-8.2.0-sdk
         run: |
           ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package pc --package mac --package linux
+          echo $(dirname $(pwd))/CarbonWashing-*-dists
+          ls $(dirname $(pwd))/CarbonWashing-*-dists
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
