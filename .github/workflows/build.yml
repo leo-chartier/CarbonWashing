@@ -24,7 +24,7 @@ jobs:
       - name: Build the game
         working-directory: ../renpy-8.2.0-sdk
         run: |
-          ./renpy.sh launcher distribute .. --package pc --package mac --package linux > /dev/null
+          ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package pc --package mac --package linux > /dev/null
 
       - name: Debug
         working-directory: ../renpy-8.2.0-sdk
