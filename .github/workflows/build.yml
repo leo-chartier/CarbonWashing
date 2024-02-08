@@ -27,5 +27,4 @@ jobs:
           ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package pc --package mac --package linux > /dev/null
 
       - name: Debug
-        working-directory: ../renpy-8.2.0-sdk
-        run: ls
+        run: tree -d ..
