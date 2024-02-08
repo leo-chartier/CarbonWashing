@@ -28,6 +28,5 @@ jobs:
 
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
-        working-directory: ../CarbonWashing-*-dists
         with:
-          path: $(pwd)
+          path: $(dirname $(pwd))/CarbonWashing-*-dists
