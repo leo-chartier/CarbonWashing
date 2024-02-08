@@ -18,11 +18,12 @@ jobs:
         run: |
           wget https://www.renpy.org/dl/8.2.0/renpy-8.2.0-sdk.tar.bz2 -q
           tar -xf renpy-8.2.0-sdk.tar.bz2
+          rm renpy-8.2.0-sdk.tar.bz2
 
       - name: Build the game
+        working-directory: renpy-8.2.0-sdk
         run: |
-          cd renpy-8.2.0-sdk
-          ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package pc --package mac --package linux 2> /dev/null
+          ./renpy.sh launcher distribute .. --package pc --package mac --package linux > /dev/null
 
       - name: Debug
         run: |
