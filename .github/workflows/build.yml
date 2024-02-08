@@ -17,14 +17,16 @@ jobs:
       - name: Download and extract Renpy
         working-directory: ..
         run: |
-          wget https://www.renpy.org/dl/8.2.0/renpy-8.2.0-sdk.tar.bz2 -q
+          wget https://www.renpy.org/dl/8.2.0/renpy-8.2.0-sdk.tar.bz2
           tar -xf renpy-8.2.0-sdk.tar.bz2
           rm renpy-8.2.0-sdk.tar.bz2
 
       - name: Build the game
         working-directory: ../renpy-8.2.0-sdk
         run: |
-          ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package pc --package mac --package linux > /dev/null
+          ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package pc --package mac --package linux
 
-      - name: Debug
-        run: tree -d ..
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          path: ../CarbonWashing-*-dists
