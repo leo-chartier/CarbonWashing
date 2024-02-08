@@ -31,4 +31,4 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
         with:
-          path: ${{ $(dirname $(pwd))/CarbonWashing-*-dists }}
+          path: /home/runner/work/CarbonWashing/CarbonWashing-1.0-dists
