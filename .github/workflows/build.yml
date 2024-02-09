@@ -28,7 +28,18 @@ jobs:
           echo $(dirname $(pwd))/CarbonWashing-*-dists
           ls $(dirname $(pwd))/CarbonWashing-*-dists
 
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.3.1
+      # - name: Upload a Build Artifact
+      #   uses: actions/upload-artifact@v4.3.1
+      #   with:
+      #     path: /home/runner/work/CarbonWashing/CarbonWashing-1.0-dists
+
+      - name: Release binaries
+        uses: svenstaro/upload-release-action@2.7.0
         with:
-          path: /home/runner/work/CarbonWashing/CarbonWashing-1.0-dists
+          # repo_token: ${{ github.token }}
+          file: /home/runner/work/CarbonWashing/CarbonWashing-1.0-dists
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
+          prerelease: true
+          # body: # Content of the release text. Empty by default.
