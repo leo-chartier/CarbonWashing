@@ -41,6 +41,17 @@ jobs:
         run: |
           ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package web
 
+      - name: Deploy web version to server
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+            server: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            port: ${{ secrets.PORT }}
+            local_path: '../CarbonWashing-1.0-dists/CarbonWashing-*-web.zip'
+            remote_path: ${{ secrets.BASEDIR }}
+            sftp_only: true
+
       - name: Restart the web version
         uses: appleboy/ssh-action@v1.0.3
         with:
