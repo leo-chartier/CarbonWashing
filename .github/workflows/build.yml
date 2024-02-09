@@ -48,7 +48,7 @@ jobs:
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
             port: ${{ secrets.PORT }}
-            local_path: '$(dirname $(pwd))/CarbonWashing-1.0-dists/CarbonWashing-1.0-web.zip'
+            local_path: $(dirname $(pwd))/CarbonWashing-1.0-dists/CarbonWashing-1.0-web.zip
             remote_path: ${{ secrets.BASEDIR }}
             sftp_only: true
 
