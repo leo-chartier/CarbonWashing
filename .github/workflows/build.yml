@@ -36,10 +36,9 @@ jobs:
       - name: Release binaries
         uses: svenstaro/upload-release-action@2.7.0
         with:
-          # repo_token: ${{ github.token }}
-          file: /home/runner/work/CarbonWashing/CarbonWashing-1.0-dists/*
-          tag: ${{ github.ref }}
+          file: ../CarbonWashing-1.0-dists/*
+          tag: Automatic release
           overwrite: true
           file_glob: true
           prerelease: true
-          # body: # Content of the release text. Empty by default.
+          body: Automatic release of our game. MAY NOT BE WORKING PROPERLY.
