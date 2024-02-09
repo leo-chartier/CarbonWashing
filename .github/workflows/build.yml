@@ -40,8 +40,6 @@ jobs:
         working-directory: ../renpy-8.2.0-sdk
         run: |
           ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package web
-          ls $(dirname $(pwd))/CarbonWashing-*-dists
-          ls ../CarbonWashing-1.0-dists
 
       - name: Deploy web version to server
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -50,7 +48,7 @@ jobs:
             username: ${{ secrets.USERNAME }}
             password: ${{ secrets.PASSWORD }}
             port: ${{ secrets.PORT }}
-            local_path: '../CarbonWashing-1.0-dists/CarbonWashing-1.0-web.zip'
+            local_path: '$(dirname $(pwd))/CarbonWashing-1.0-dists/CarbonWashing-1.0-web.zip'
             remote_path: ${{ secrets.BASEDIR }}
             sftp_only: true
 
