@@ -43,6 +43,7 @@ jobs:
 
       - name: Change work directory
         working-directory: ../CarbonWashing-1.0-dists
+        run: echo
 
       - name: Deploy web version to server
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
