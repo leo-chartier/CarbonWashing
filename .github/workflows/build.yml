@@ -41,6 +41,7 @@ jobs:
         run: |
           ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package web
           pwd
+          ls ../CarbonWashing-1.0-dists
 
       - name: Deploy web version to server
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
