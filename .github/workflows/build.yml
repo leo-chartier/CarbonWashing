@@ -40,6 +40,7 @@ jobs:
         working-directory: ../renpy-8.2.0-sdk
         run: |
           ./renpy.sh launcher distribute $GITHUB_WORKSPACE --package web
+          pwd
 
       - name: Deploy web version to server
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
