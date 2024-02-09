@@ -37,7 +37,7 @@ jobs:
         uses: svenstaro/upload-release-action@2.7.0
         with:
           file: ../CarbonWashing-1.0-dists/*
-          tag: Automatic release
+          tag: "Automatic release"
           overwrite: true
           file_glob: true
           prerelease: true
