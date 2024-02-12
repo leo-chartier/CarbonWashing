@@ -50,7 +50,8 @@ jobs:
         with:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           port: ${{ secrets.PORT }}
           uploads: |
             ./ => ${{ secrets.BASEDIR }}
@@ -60,7 +61,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
             cd ${{ secrets.BASEDIR }}
